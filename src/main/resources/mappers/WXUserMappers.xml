@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.repository.WXUserMapper">
+    <resultMap id="WXUserResultMap" type="com.example.demo.model.WXUser">
+        <id column="Id" property="Id"/>
+        <result column="wx_openId" property="openId"/>
+        <result column="wx_userId" property="wxUserId"/>
+        <result column="wx_nickname" property="nickName"/>
+        <result column="wx_gender" property="gender"/>
+        <result column="wx_avatarUrl" property="faceUrl"/>
+        <result column="wx_createtime" property="wxCreateTime"/>
+
+
+    </resultMap>
+
+    <insert id="saveWXUser" parameterType="com.example.demo.model.WXUser">
+        insert into app_wxuser (`wx_openId`,`wx_userId`,`wx_nickname`,`wx_gender`,`wx_avatarUrl`,`wx_createtime`)
+        values(#{openId},#{wxUserId},#{nickName},#{gender},#{faceUrl},#{wxCreateTime})
+    </insert>
+
+    <select id="findByOpenID" resultMap="WXUserResultMap">
+        select * from app_wxuser where wx_openId=#{openId};
+    </select>
+
+</mapper>

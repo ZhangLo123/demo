@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.repository.ProinfoMapper">
+    <resultMap id="ProinfoResultMap" type="com.example.demo.model.Proinfo">
+        <id column="Id" property="Id"/>
+        <result column="u_id" property="userId"/>
+        <result column="u_token" property="userToken"/>
+        <result column="p_shopid" property="shopId"/>
+        <result column="p_shopname" property="shopName"/>
+        <result column="p_shopprice" property="shopPrice"/>
+        <result column="p_shopfactory" property="shopFactory"/>
+        <result column="p_contact" property="contact"/>
+        <result column="p_volt" property="volt"/>
+        <result column="p_aisle" property="aisle"/>
+        <result column="p_weight" property="weight"/>
+        <result column="p_system" property="system"/>
+        <result column="p_profile" property="profile"/>
+        <result column="p_application" property="application"/>
+        <result column="p_features" property="features"/>
+        <result column="p_mainimage" property="mainImage"/>
+        <result column="p_carouselimages" property="carouselImages"/>
+        <result column="p_uploadtime" property="uploadTime"/>
+
+    </resultMap>
+    <select id="findOneShop" resultMap="ProinfoResultMap" >
+        select * from app_proinfo where p_shopname=#{shopName};
+    </select>
+
+    <select id="findAllShop" resultMap="ProinfoResultMap" >
+        select * from app_proinfo;
+    </select>
+
+    <select id="findOneUser" resultMap="ProinfoResultMap" >
+        select * from app_proinfo where u_id=#{userId};
+    </select>
+
+    <update id="updatemainImage" parameterType="com.example.demo.model.Proinfo">
+        update app_proinfo set p_mainimage=#{mainImage} where p_shopid = #{shopId}
+    </update>
+
+    <update id="updatecarouselImages" parameterType="com.example.demo.model.Proinfo">
+        update app_proinfo set p_carouselimages=#{carouselImages} where p_shopid = #{shopId}
+    </update>
+
+    <insert id="UploadShop" parameterType="com.example.demo.model.Proinfo">
+        insert into app_proinfo (`Id`,`u_id`,`u_token`,`p_shopid`,`p_shopname`,`p_shopprice`,`p_shopfactory`,`p_contact`,`p_volt`,
+        `p_aisle`,`p_weight`,`p_system`,`p_profile`,`p_application`,`p_features`,`p_uploadtime`)
+        values(#{Id},#{userId},#{userToken},#{shopId},#{shopName},#{shopPrice},#{shopFactory},#{contact},#{volt},#{aisle},#{weight},
+        #{system},#{profile},#{application},#{features},#{uploadTime})
+    </insert>
+
+
+
+</mapper>

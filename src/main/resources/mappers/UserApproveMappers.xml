@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.repository.UserApproveMapper">
+    <resultMap id="userApproveResultMap" type="com.example.demo.model.UserApprove">
+        <id column="id" property="Id"/>
+        <result column="u_id" property="uId"/>
+        <result column="u_token" property="uToken"/>
+        <result column="app_gscname" property="gscName"/>
+        <result column="app_gsename" property="gseName"/>
+        <result column="app_buslicense" property="busLicense"/>
+        <result column="app_regaddress" property="regAddress"/>
+        <result column="app_busaddress" property="busAddress"/>
+        <result column="app_regdate" property="regDate"/>
+        <result column="app_regfund" property="regFund"/>
+        <result column="app_representative" property="representative"/>
+        <result column="app_companytype" property="companyType"/>
+        <result column="app_applicant" property="applicant"/>
+        <result column="app_applicantdepart" property="applicantDepart"/>
+        <result column="app_applicantpost" property="applicantPost"/>
+        <result column="app_apptime" property="appTime"/>
+
+    </resultMap>
+
+    <select id="findAllApprove" resultMap="userApproveResultMap" >
+    select * from app_approve;
+    </select>
+
+    <insert id="putApply" parameterType="com.example.demo.model.UserApprove">
+        insert into app_approve(`id`,`u_id`,`u_token`,`app_gscname`,`app_gsename`,`app_buslicense`,`app_regaddress`,`app_busaddress`,`app_regdate`
+        ,`app_regfund`,`app_representative`,`app_companytype`,`app_applicant`,`app_applicantdepart`,`app_applicantpost`,`app_apptime`)
+        values(#{Id},#{uId},#{uToken},#{gscName},#{gseName},#{busLicense},#{regAddress},#{busAddress},#{regDate},#{regFund},#{representative},#{companyType}
+        ,#{applicant},#{applicantDepart},#{applicantPost},#{appTime})
+    </insert>
+
+</mapper>

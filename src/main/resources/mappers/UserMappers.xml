@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.repository.UserMapper">
+    <resultMap id="userResultMap" type="com.example.demo.model.User">
+        <id column="id" property="Id"/>
+        <result column="u_name" property="uName"/>
+        <result column="u_id" property="uId"/>
+        <result column="u_password" property="uPassWord"/>
+        <result column="u_phone" property="uPhone"/>
+        <result column="u_headimage" property="uHeadimage"/>
+        <result column="u_sex" property="uSex"/>
+        <result column="u_birthday" property="uBirthday"/>
+        <result column="u_province" property="uProvince"/>
+        <result column="u_token" property="uToken"/>
+        <result column="u_limit" property="uLimit"/>
+        <result column="u_regtime" property="uRegtime"/>
+    </resultMap>
+
+    <select id="userLogin" resultMap="userResultMap" >
+        select * from app_user where u_name=#{uName};
+    </select>
+
+    <select id="findAll" resultMap="userResultMap" >
+        select * from app_user;
+    </select>
+
+    <select id="findByuserId" resultMap="userResultMap" >
+        select * from app_user where u_id=#{uId};
+    </select>
+
+    <insert id="saveUser" parameterType="com.example.demo.model.User">
+        insert into app_user (`id`,`u_id`,`u_name`,`u_password`,`u_phone`,`u_headimage`,`u_sex`,`u_birthday`,`u_province`,`u_token`,`u_limit`,`u_regtime`) values(#{Id},#{uId},#{uName},#{uPassWord},#{uPhone},#{uHeadimage},#{uSex},#{uBirthday},#{uProvince},#{uToken},#{uLimit},#{uRegtime})
+    </insert>
+
+    <update id="updateUserNickname"
+            parameterType="com.example.demo.model.User">
+        update app_user set u_name=#{uName} where u_id = #{uId}
+    </update>
+
+    <update id="updateUserface"
+            parameterType="com.example.demo.model.User">
+        update app_user set u_headimage=#{uHeadimage} where u_id = #{uId}
+    </update>
+
+    <update id="updateUserBirthday"
+            parameterType="com.example.demo.model.User">
+        update app_user set u_birthday=#{uBirthday} where u_id = #{uId}
+    </update>
+
+    <update id="updateUserProvince"
+            parameterType="com.example.demo.model.User">
+        update app_user set u_province=#{uProvince} where u_id = #{uId}
+    </update>
+
+    <update id="updateUserSex"
+            parameterType="com.example.demo.model.User">
+        update app_user set u_sex=#{uSex} where u_id = #{uId}
+    </update>
+
+    <update id="updateUserPhone"
+            parameterType="com.example.demo.model.User">
+        update app_user set u_phone=#{uPhone} where u_id = #{uId}
+    </update>
+
+
+</mapper>

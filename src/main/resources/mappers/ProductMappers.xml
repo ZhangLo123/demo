@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.repository.ProductMapper">
+    <resultMap id="ProductResultMap" type="com.example.demo.model.Product">
+        <id column="id" property="Id"/>
+        <result column="pro_id" property="pId"/>
+        <result column="pro_name" property="pName"/>
+        <result column="pro_price" property="price"/>
+        <result column="pro_factory" property="factory"/>
+        <result column="pro_service" property="service"/>
+        <result column="pro_image" property="image"/>
+    </resultMap>
+
+    <select id="findBypName" resultMap="ProductResultMap" >
+        select * from app_product where pro_name=#{pName};
+    </select>
+
+    <select id="findAllPro" resultMap="ProductResultMap" >
+        select * from app_product;
+    </select>
+
+    <insert id="saveProduct" parameterType="com.example.demo.model.Product">
+        insert into app_product (`id`,`pro_id`,`pro_name`,`pro_price`,`pro_factory`,`pro_service`,`pro_image`)
+        values(#{Id},#{pId},#{pName},#{price},#{factory},#{service},#{image})
+    </insert>
+
+</mapper>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.repository.ShopUploadMapper">
+    <resultMap id="ShopUploadResultMap" type="com.example.demo.model.ShopUpload">
+        <id column="Id" property="Id"/>
+        <result column="user_id" property="userId"/>
+        <result column="shop_name" property="shopName"/>
+        <result column="shop_price" property="shopPrice"/>
+        <result column="shop_factory" property="shopFactory"/>
+        <result column="shop_info" property="shopInfo"/>
+        <result column="shop_images_zhutu" property="shopImagesZhutu"/>
+        <result column="shop_createtime" property="shopCreateTime"/>
+
+    </resultMap>
+
+    <select id="findOneshop" resultMap="ShopUploadResultMap" >
+        select * from app_upload where shop_name=#{shopName};
+    </select>
+
+    <select id="findAllshop" resultMap="ShopUploadResultMap" >
+        select * from app_upload;
+    </select>
+
+    <insert id="uploadShop" parameterType="com.example.demo.model.ShopUpload">
+        insert into app_upload (`Id`,`user_id`,`shop_name`,`shop_price`,`shop_factory`,`shop_info`,`shop_images_zhutu`,`shop_createtime`)
+        values(#{Id},#{userId},#{shopName},#{shopPrice},#{shopFactory},#{shopInfo},#{shopImagesZhutu},#{shopCreateTime})
+    </insert>
+
+</mapper>
