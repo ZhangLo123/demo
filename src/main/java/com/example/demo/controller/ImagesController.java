@@ -18,6 +18,7 @@ import java.util.*;
 
 @RestController
 public class ImagesController {
+
     @Autowired
     ImagesService imagesService;
 

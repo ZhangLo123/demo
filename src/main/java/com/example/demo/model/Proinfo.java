@@ -20,12 +20,12 @@ public class Proinfo {
     private String features;
     private String mainImage;
     private String carouselImages;
-    private LocalDate uploadTime;
+    private String uploadTime;
 
     public Proinfo() {
     }
 
-    public Proinfo(String userId, String userToken, String shopId, String shopName, String shopPrice, String shopFactory, String contact, String volt, String aisle, String weight, String system, String profile, String application, String features, LocalDate uploadTime) {
+    public Proinfo(String userId, String userToken, String shopId, String shopName, String shopPrice, String shopFactory, String contact, String volt, String aisle, String weight, String system, String profile, String application, String features, String uploadTime) {
         this.userId = userId;
         this.userToken = userToken;
         this.shopId = shopId;
@@ -183,11 +183,11 @@ public class Proinfo {
         this.carouselImages = carouselImages;
     }
 
-    public LocalDate getUploadTime() {
+    public String getUploadTime() {
         return uploadTime;
     }
 
-    public void setUploadTime(LocalDate uploadTime) {
+    public void setUploadTime(String uploadTime) {
         this.uploadTime = uploadTime;
     }
 

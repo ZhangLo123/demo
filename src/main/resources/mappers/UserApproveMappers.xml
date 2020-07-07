@@ -21,6 +21,7 @@
         <result column="app_applicantdepart" property="applicantDepart"/>
         <result column="app_applicantpost" property="applicantPost"/>
         <result column="app_apptime" property="appTime"/>
+        <result column="app_status" property="appTime"/>
 
     </resultMap>
 

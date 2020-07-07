@@ -9,12 +9,12 @@ public class Images {
     private String pId;
     private String pShopname;
     private String imPathLunbo;
-    private LocalDate imCreateTime;
+    private String imCreateTime;
 
     public Images() {
     }
 
-    public Images(String userId, String pId, String pShopname, String imPathLunbo, LocalDate imCreateTime) {
+    public Images(String userId, String pId, String pShopname, String imPathLunbo, String imCreateTime) {
         this.userId = userId;
         this.pId = pId;
         this.pShopname = pShopname;
@@ -62,11 +62,11 @@ public class Images {
         this.imPathLunbo = imPathLunbo;
     }
 
-    public LocalDate getImCreateTime() {
+    public String getImCreateTime() {
         return imCreateTime;
     }
 
-    public void setImCreateTime(LocalDate imCreateTime) {
+    public void setImCreateTime(String imCreateTime) {
         this.imCreateTime = imCreateTime;
     }
 

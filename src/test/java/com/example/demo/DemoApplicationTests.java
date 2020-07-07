@@ -106,7 +106,7 @@ class DemoApplicationTests {
         images.setpId("12112");
         images.setpShopname("ceshi");
         images.setImPathLunbo("https://ae01.alicdn.com/kf/HTB1Mj7iTmzqK1RjSZFjq6zlCFXaP.jpg");
-        images.setImCreateTime(LocalDate.now());
+//        images.setImCreateTime(LocalDate.now());
 
         imagesService.saveImage(images);
         imagesService.findAllImage().forEach(System.out::print);

@@ -14,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Calendar;
@@ -21,6 +22,9 @@ import java.util.Map;
 
 @Controller
 public class ProinfoController {
+
+    private static SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
     @Autowired
     ProinfoService proinfoService;
     @Autowired
@@ -57,7 +61,7 @@ public class ProinfoController {
 
         if (userId != null && userToken != null){
             Proinfo proinfo = new Proinfo(userId,userToken,pId,shopName,shopPrice,shopFactory,contact,volt,aisle,weight,system,
-                    profile,application,features, LocalDate.now());
+                    profile,application,features, sf.format(new Date(System.currentTimeMillis())));
             proinfoService.UploadShop(proinfo);
             return new JsonResult(proinfo,"upload success",200);
         }else {
@@ -144,7 +148,7 @@ public class ProinfoController {
             System.out.println("-------------------------------------------------------");
             try{
                 multipartFile.transferTo(mainImg);
-                Images images = new Images(userId,shopId,shopname,mainImg.toString(),LocalDate.now());
+                Images images = new Images(userId,shopId,shopname,mainImg.toString(),sf.format(new Date(System.currentTimeMillis())));
                 imagesService.saveImage(images);
             } catch (IOException e) {
                 e.printStackTrace();

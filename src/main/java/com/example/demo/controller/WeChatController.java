@@ -14,6 +14,8 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Map;
 
@@ -22,6 +24,7 @@ public class WeChatController {
 
     private static final String appid = "wx62202b9474e1b146";
     private static final String secret = "0461d0d18d49cf8f2c90c2a8a3cc0bf1";
+    private static SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     @Autowired
     WXUserService wxUserService;
@@ -33,7 +36,7 @@ public class WeChatController {
         String gender = param.get("gender").toString();
         String faceUrl = param.get("faceUrl").toString();
         String js_code = param.get("code").toString();
-
+        String nowTime = sf.format(new Date(System.currentTimeMillis()));
 
         String wxResult = doGet(appid, secret, js_code);
         System.out.println(wxResult);
@@ -53,7 +56,7 @@ public class WeChatController {
             System.out.println(wxUserList);
 
             if (wxUserList == null || "".equals(wxResult)) {
-                WXUser wxUser = new WXUser(openid, IDUtil.IDCode(),nickName, gender, faceUrl, LocalDate.now());
+                WXUser wxUser = new WXUser(openid, IDUtil.IDCode(),nickName, gender, faceUrl, nowTime);
                 wxUserService.saveWXUser(wxUser);
                 return new JsonResult(wxUser, "registerSuccess", 202);
 

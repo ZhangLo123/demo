@@ -9,19 +9,19 @@ public class WXUser {
     private String nickName;
     private String gender;
     private String faceUrl;
-    private LocalDate wxCreateTime;
+    private String wxCreateTime;
 
     public WXUser() {
     }
 
-    public WXUser(String nickName, String gender, String faceUrl, LocalDate wxCreateTime) {
+    public WXUser(String nickName, String gender, String faceUrl, String wxCreateTime) {
         this.nickName = nickName;
         this.gender = gender;
         this.faceUrl = faceUrl;
         this.wxCreateTime = wxCreateTime;
     }
 
-    public WXUser(String openId,String wxUserId, String nickName, String gender, String faceUrl, LocalDate wxCreateTime) {
+    public WXUser(String openId,String wxUserId, String nickName, String gender, String faceUrl, String wxCreateTime) {
         this.openId = openId;
         this.wxUserId = wxUserId;
         this.nickName = nickName;
@@ -30,7 +30,7 @@ public class WXUser {
         this.wxCreateTime = wxCreateTime;
     }
 
-    public WXUser(Integer id, String openId, String nickName, String gender, String faceUrl,LocalDate wxCreateTime) {
+    public WXUser(Integer id, String openId, String nickName, String gender, String faceUrl,String wxCreateTime) {
         Id = id;
         this.openId = openId;
         this.nickName = nickName;
@@ -87,11 +87,11 @@ public class WXUser {
         this.faceUrl = faceUrl;
     }
 
-    public LocalDate getWxCreateTime() {
+    public String getWxCreateTime() {
         return wxCreateTime;
     }
 
-    public void setWxCreateTime(LocalDate wxCreateTime) {
+    public void setWxCreateTime(String wxCreateTime) {
         this.wxCreateTime = wxCreateTime;
     }
 

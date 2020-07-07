@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
+import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Calendar;
@@ -27,6 +28,7 @@ import static com.example.demo.utils.CodeTest.sendMsg;
 @Controller
 public class UserController {
 
+    private static SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     @Autowired
     UserService userService;
@@ -46,6 +48,8 @@ public class UserController {
         User user = userService.userLogin(username);
 
         String Ident = UserController.RandomCode();
+        String nowTime = sf.format(new Date(System.currentTimeMillis()));
+
 
 
         if (user != null){
@@ -63,7 +67,7 @@ public class UserController {
         }else {
             String tokenReg = Ident + System.currentTimeMillis();
             String userId = UserController.IDCode();
-            User user1 = new User(userId,username,password,tokenReg,LocalDate.now());
+            User user1 = new User(userId,username,password,tokenReg,nowTime);
             userService.saveUser(user1);
             User user2 = userService.userLogin(user1.getuName());
             httpSession.setAttribute("name",username);

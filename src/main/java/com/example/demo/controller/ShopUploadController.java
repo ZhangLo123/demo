@@ -12,12 +12,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
 @RestController
 public class ShopUploadController {
+
+    private static SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
     @Autowired
     ShopUploadService shopUploadService;
 
@@ -45,7 +50,7 @@ public class ShopUploadController {
 
         if (userId != null){
 
-            ShopUpload shopUpload = new ShopUpload(userId,shopName,shopPrice,shopFactory,shopInfo,System.currentTimeMillis());
+            ShopUpload shopUpload = new ShopUpload(userId,shopName,shopPrice,shopFactory,shopInfo,sf.format(new Date(System.currentTimeMillis())));
             shopUploadService.uploadShop(shopUpload);
             return new JsonResult("","upload success",200);
         }else {

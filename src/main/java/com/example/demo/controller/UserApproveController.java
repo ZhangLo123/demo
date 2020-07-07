@@ -40,6 +40,7 @@ public class UserApproveController {
         String applicant = param.get("applicant").toString();
         String applicantdepart = param.get("applicantdepart").toString();
         String applicantpost = param.get("applicantpost").toString();
+        String status = "待审核";
 
         System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++");
         System.out.println(userId);
@@ -48,7 +49,7 @@ public class UserApproveController {
 
         if (userId != null && userToken != null){
             UserApprove userApprove = new UserApprove(userId,userToken,gscname,gsename,buslicense,
-                    regaddress,busaddress,regdate,regfund,representative,companytype,applicant,applicantdepart,applicantpost, sf.format(new Date(System.currentTimeMillis())));
+                    regaddress,busaddress,regdate,regfund,representative,companytype,applicant,applicantdepart,applicantpost, sf.format(new Date(System.currentTimeMillis())),status);
             userApproveService.putApply(userApprove);
             return new JsonResult(userApprove,"true",200);
         }else {

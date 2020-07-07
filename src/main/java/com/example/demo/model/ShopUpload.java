@@ -8,12 +8,12 @@ public class ShopUpload {
     private String shopFactory;
     private String shopInfo;
     private String shopImagesZhutu;
-    private long shopCreateTime;
+    private String shopCreateTime;
 
     public ShopUpload() {
     }
 
-    public ShopUpload(String userId, String shopName, Integer shopPrice, String shopFactory, String shopInfo, long shopCreateTime) {
+    public ShopUpload(String userId, String shopName, Integer shopPrice, String shopFactory, String shopInfo, String shopCreateTime) {
         this.userId = userId;
         this.shopName = shopName;
         this.shopPrice = shopPrice;
@@ -22,7 +22,7 @@ public class ShopUpload {
         this.shopCreateTime = shopCreateTime;
     }
 
-    public ShopUpload(String userId, String shopName, Integer shopPrice, String shopFactory, String shopInfo, String shopImagesZhutu, long shopCreateTime) {
+    public ShopUpload(String userId, String shopName, Integer shopPrice, String shopFactory, String shopInfo, String shopImagesZhutu, String shopCreateTime) {
         this.userId = userId;
         this.shopName = shopName;
         this.shopPrice = shopPrice;
@@ -32,7 +32,7 @@ public class ShopUpload {
         this.shopCreateTime = shopCreateTime;
     }
 
-    public ShopUpload(Integer id, String userId, String shopName, Integer shopPrice, String shopFactory, String shopInfo, String shopImagesZhutu, long shopCreateTime) {
+    public ShopUpload(Integer id, String userId, String shopName, Integer shopPrice, String shopFactory, String shopInfo, String shopImagesZhutu, String shopCreateTime) {
         Id = id;
         this.userId = userId;
         this.shopName = shopName;
@@ -51,11 +51,11 @@ public class ShopUpload {
         Id = id;
     }
 
-    public long getShopCreateTime() {
+    public String getShopCreateTime() {
         return shopCreateTime;
     }
 
-    public void setShopCreateTime(long shopCreateTime) {
+    public void setShopCreateTime(String shopCreateTime) {
         this.shopCreateTime = shopCreateTime;
     }
 
