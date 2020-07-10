@@ -21,19 +21,32 @@
         <result column="app_applicantdepart" property="applicantDepart"/>
         <result column="app_applicantpost" property="applicantPost"/>
         <result column="app_apptime" property="appTime"/>
-        <result column="app_status" property="appTime"/>
+        <result column="app_limit" property="limit"/>
 
     </resultMap>
 
     <select id="findAllApprove" resultMap="userApproveResultMap" >
-    select * from app_approve;
+        select * from app_approve;
     </select>
 
     <insert id="putApply" parameterType="com.example.demo.model.UserApprove">
         insert into app_approve(`id`,`u_id`,`u_token`,`app_gscname`,`app_gsename`,`app_buslicense`,`app_regaddress`,`app_busaddress`,`app_regdate`
-        ,`app_regfund`,`app_representative`,`app_companytype`,`app_applicant`,`app_applicantdepart`,`app_applicantpost`,`app_apptime`)
+        ,`app_regfund`,`app_representative`,`app_companytype`,`app_applicant`,`app_applicantdepart`,`app_applicantpost`,`app_apptime`,`app_limit`)
         values(#{Id},#{uId},#{uToken},#{gscName},#{gseName},#{busLicense},#{regAddress},#{busAddress},#{regDate},#{regFund},#{representative},#{companyType}
-        ,#{applicant},#{applicantDepart},#{applicantPost},#{appTime})
+        ,#{applicant},#{applicantDepart},#{applicantPost},#{appTime},#{limit})
     </insert>
+
+    <select id="findAppLimit" resultMap="userApproveResultMap" >
+        select app_limit from app_approve where u_id=#{uId};
+    </select>
+
+    <select id="findOneApprove" resultMap="userApproveResultMap" >
+        select app_limit from app_approve where u_id=#{uId};
+    </select>
+
+    <update id="updateApprove"  parameterType="com.example.demo.model.UserApprove">
+        update app_approve set app_buslicense=#{busLicense}, app_regaddress=#{regAddress}, app_busaddress=#{busAddress}, app_regdate=#{regDate}, app_regfund=#{regFund}, app_representative=#{representative}, app_companytype=#{companyType}
+        , app_applicant=#{applicant} , app_applicantdepart=#{applicantDepart} , app_applicantpost=#{applicantPost} , app_apptime=#{appTime}, app_limit=#{limit} where u_id = #{uId};
+    </update>
 
 </mapper>

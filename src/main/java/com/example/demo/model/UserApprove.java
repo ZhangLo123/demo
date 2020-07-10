@@ -19,12 +19,12 @@ public class UserApprove {
     private String applicantDepart;
     private String applicantPost;
     private String appTime;
-    private String status;
+    private String limit;
 
     public UserApprove() {
     }
 
-    public UserApprove(String uId, String uToken, String gscName, String gseName, String busLicense, String regAddress, String busAddress, String regDate, String regFund, String representative, String companyType, String applicant, String applicantDepart, String applicantPost, String appTime,String status) {
+    public UserApprove(String uId, String uToken, String gscName, String gseName, String busLicense, String regAddress, String busAddress, String regDate, String regFund, String representative, String companyType, String applicant, String applicantDepart, String applicantPost, String appTime,String limit) {
         this.uId = uId;
         this.uToken = uToken;
         this.gscName = gscName;
@@ -40,7 +40,7 @@ public class UserApprove {
         this.applicantDepart = applicantDepart;
         this.applicantPost = applicantPost;
         this.appTime = appTime;
-        this.status = status;
+        this.limit = limit;
 
     }
 
@@ -172,12 +172,12 @@ public class UserApprove {
         this.appTime = appTime;
     }
 
-    public String getStatus() {
-        return status;
+    public String getLimit() {
+        return limit;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setLimit(String limit) {
+        this.limit = limit;
     }
 
     @Override
@@ -199,7 +199,7 @@ public class UserApprove {
                 ", applicantDepart='" + applicantDepart + '\'' +
                 ", applicantPost='" + applicantPost + '\'' +
                 ", appTime='" + appTime + '\'' +
-                ", status='" + status + '\'' +
+                ", limit='" + limit + '\'' +
                 '}';
     }
 }

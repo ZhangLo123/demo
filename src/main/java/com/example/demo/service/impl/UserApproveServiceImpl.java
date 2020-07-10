@@ -25,4 +25,19 @@ public class UserApproveServiceImpl implements UserApproveService {
     public int putApply(UserApprove userApprove) {
         return userApproveMapper.putApply(userApprove);
     }
+
+    @Override
+    public List<UserApprove> findApprove(String uId) {
+        return userApproveMapper.findApprove(uId);
+    }
+
+    @Override
+    public UserApprove findOneApprove(String uId) {
+        return userApproveMapper.findOneApprove(uId);
+    }
+
+    @Override
+    public int updateApprove(UserApprove userApprove) {
+        return userApproveMapper.updateApprove(userApprove);
+    }
 }

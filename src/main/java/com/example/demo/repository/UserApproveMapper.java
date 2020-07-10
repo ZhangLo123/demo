@@ -13,4 +13,10 @@ public interface UserApproveMapper {
     List<UserApprove> findAllApprove();
 
     int putApply(UserApprove userApprove);
+
+    List<UserApprove> findApprove(String uId);
+
+    UserApprove findOneApprove(String uId);
+
+    int updateApprove(UserApprove userApprove);
 }

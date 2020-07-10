@@ -18,7 +18,6 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Map;
 
@@ -38,10 +37,11 @@ public class UserController {
 
     /**
      * 用户登录
+     * @return
      */
     @RequestMapping("/user/registOrLogin")
     @ResponseBody
-    public JsonResult<UserDataInfo> login(@RequestBody Map<String,Object> param){
+    public JsonResult login(@RequestBody Map<String,Object> param){
         String username = param.get("username").toString();
         String password = param.get("password").toString();
 
@@ -130,9 +130,9 @@ public class UserController {
             httpSession.removeAttribute("name");
             httpSession.removeAttribute("token");
             System.out.println("退出成功");
-            return new JsonResult(new UserDataInfo(uNameLogout),"logout success",200);
+            return new JsonResult<>(new UserDataInfo(uNameLogout),"logout success",200);
         }else {
-            return new JsonResult(new UserDataInfo(uNameLogout),"logout failure",500);
+            return new JsonResult<>(new UserDataInfo(uNameLogout),"logout failure",500);
         }
     }
 
@@ -164,7 +164,7 @@ public class UserController {
 
     @RequestMapping("/user/phoneCode.do")
     @ResponseBody
-    public JsonResult getphoneCode(@RequestBody Map<String,Object> param, HttpServletRequest request){
+    public JsonResult<String> getphoneCode(@RequestBody Map<String,Object> param, HttpServletRequest request){
 
         // 用户名
         String name="dxwhqb";
@@ -202,9 +202,9 @@ public class UserController {
                 e.printStackTrace();
             }
 
-            return new JsonResult(strCode,"验证码发送成功",200);
+            return new JsonResult<>(strCode,"验证码发送成功",200);
         }else {
-            return new JsonResult("","验证失败",500);
+            return new JsonResult<>("","验证失败",500);
         }
     }
 
@@ -218,9 +218,9 @@ public class UserController {
      */
     @RequestMapping("/user/updateUserface")
     @ResponseBody
-    public JsonResult updateUserface(@RequestParam("userId") String userId,
-                                     @RequestParam("userToken") String userToken,
-                                     @RequestParam("file") MultipartFile multipartFile){
+    public JsonResult<User> updateUserface(@RequestParam("userId") String userId,
+                                           @RequestParam("userToken") String userToken,
+                                           @RequestParam("file") MultipartFile multipartFile){
 
         System.out.println("********************************************************");
         System.out.println(userId);
@@ -265,9 +265,9 @@ public class UserController {
             }
             User user2 = userService.findByuserId(userId);
             System.out.println(user2);
-            return new JsonResult(user2,"上传成功",200);
+            return new JsonResult<>(user2,"上传成功",200);
         }else {
-            return new JsonResult(new User(user.getuId(),user.getuName(),user.getuHeadimage(),user.getuSex(),user.getuBirthday(),user.getuProvince(),user.getuToken()),"上传失败",500);
+            return new JsonResult<>(new User(user.getuId(),user.getuName(),user.getuHeadimage(),user.getuSex(),user.getuBirthday(),user.getuProvince(),user.getuToken()),"上传失败",500);
         }
     }
 
@@ -277,7 +277,7 @@ public class UserController {
      */
     @RequestMapping("/user/updateUserNickname")
     @ResponseBody
-    public JsonResult updateUserNickname(@RequestBody Map<String,Object> param){
+    public JsonResult<User> updateUserNickname(@RequestBody Map<String,Object> param){
 
         String userId = param.get("userId").toString();
         String userToken = param.get("userToken").toString();
@@ -297,11 +297,11 @@ public class UserController {
             user.setuName(username);
             userService.updateUserNickname(user);
         }else {
-            return new JsonResult(new User(user.getuId(),user.getuName(),user.getuHeadimage(),user.getuSex(),user.getuBirthday(),user.getuProvince(),user.getuToken()),"UPDATA FAILURE",500);
+            return new JsonResult<>(new User(user.getuId(),user.getuName(),user.getuHeadimage(),user.getuSex(),user.getuBirthday(),user.getuProvince(),user.getuToken()),"UPDATA FAILURE",500);
         }
         User user1 = userService.findByuserId(userId);
 
-        return new JsonResult(new User(user1.getuId(),user1.getuName(),user1.getuHeadimage(),user1.getuSex(),user1.getuBirthday(),user1.getuProvince(),user1.getuToken()),"",200);
+        return new JsonResult<>(new User(user1.getuId(),user1.getuName(),user1.getuHeadimage(),user1.getuSex(),user1.getuBirthday(),user1.getuProvince(),user1.getuToken()),"",200);
     }
 
     /**
@@ -310,7 +310,7 @@ public class UserController {
      */
     @RequestMapping("/user/updateUserBirthday")
     @ResponseBody
-    public JsonResult updateUserBirthday(@RequestBody Map<String,Object> param){
+    public JsonResult<User> updateUserBirthday(@RequestBody Map<String,Object> param){
 
         String userId = param.get("userId").toString();
         String userToken = param.get("userToken").toString();
@@ -330,11 +330,11 @@ public class UserController {
             user.setuBirthday(birthday);
             userService.updateUserBirthday(user);
         }else {
-            return new JsonResult(new User(user.getuId(),user.getuName(),user.getuHeadimage(),user.getuSex(),user.getuBirthday(),user.getuProvince(),user.getuToken()),"UPDATA FAILURE",500);
+            return new JsonResult<>(new User(user.getuId(),user.getuName(),user.getuHeadimage(),user.getuSex(),user.getuBirthday(),user.getuProvince(),user.getuToken()),"UPDATA FAILURE",500);
         }
         User user1 = userService.findByuserId(userId);
 
-        return new JsonResult(new User(user1.getuId(),user1.getuName(),user1.getuHeadimage(),user1.getuSex(),user1.getuBirthday(),user1.getuProvince(),user1.getuToken()),"",200);
+        return new JsonResult<>(new User(user1.getuId(),user1.getuName(),user1.getuHeadimage(),user1.getuSex(),user1.getuBirthday(),user1.getuProvince(),user1.getuToken()),"",200);
     }
 
     /**
@@ -343,7 +343,7 @@ public class UserController {
      */
     @RequestMapping("/user/updateUserProvince")
     @ResponseBody
-    public JsonResult updateUserProvince(@RequestBody Map<String,Object> param){
+    public JsonResult<User> updateUserProvince(@RequestBody Map<String,Object> param){
 
         String userId = param.get("userId").toString();
         String userToken = param.get("userToken").toString();
@@ -363,11 +363,11 @@ public class UserController {
             user.setuProvince(province);
             userService.updateUserProvince(user);
         }else {
-            return new JsonResult(new User(user.getuId(),user.getuName(),user.getuHeadimage(),user.getuSex(),user.getuBirthday(),user.getuProvince(),user.getuToken()),"UPDATA FAILURE",500);
+            return new JsonResult<>(new User(user.getuId(),user.getuName(),user.getuHeadimage(),user.getuSex(),user.getuBirthday(),user.getuProvince(),user.getuToken()),"UPDATA FAILURE",500);
         }
         User user1 = userService.findByuserId(userId);
 
-        return new JsonResult(new User(user1.getuId(),user1.getuName(),user1.getuHeadimage(),user1.getuSex(),user1.getuBirthday(),user1.getuProvince(),user1.getuToken()),"",200);
+        return new JsonResult<>(new User(user1.getuId(),user1.getuName(),user1.getuHeadimage(),user1.getuSex(),user1.getuBirthday(),user1.getuProvince(),user1.getuToken()),"",200);
     }
 
     /**
@@ -376,7 +376,7 @@ public class UserController {
      */
     @RequestMapping("/user/updateUserSex")
     @ResponseBody
-    public JsonResult updateUserSex(@RequestBody Map<String,Object> param){
+    public JsonResult<User> updateUserSex(@RequestBody Map<String,Object> param){
 
         String userId = param.get("userId").toString();
         String userToken = param.get("userToken").toString();
@@ -396,11 +396,11 @@ public class UserController {
             user.setuSex(sex);
             userService.updateUserSex(user);
         }else {
-            return new JsonResult(new User(user.getuId(),user.getuName(),user.getuHeadimage(),user.getuSex(),user.getuBirthday(),user.getuProvince(),user.getuToken()),"UPDATA FAILURE",500);
+            return new JsonResult<>(new User(user.getuId(),user.getuName(),user.getuHeadimage(),user.getuSex(),user.getuBirthday(),user.getuProvince(),user.getuToken()),"UPDATA FAILURE",500);
         }
         User user1 = userService.findByuserId(userId);
 
-        return new JsonResult(new User(user1.getuId(),user1.getuName(),user1.getuHeadimage(),user1.getuSex(),user1.getuBirthday(),user1.getuProvince(),user1.getuToken()),"",200);
+        return new JsonResult<>(new User(user1.getuId(),user1.getuName(),user1.getuHeadimage(),user1.getuSex(),user1.getuBirthday(),user1.getuProvince(),user1.getuToken()),"",200);
     }
 
 

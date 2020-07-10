@@ -1,63 +1,16 @@
-2020-07-07 14:29:15.278  INFO 25796 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication on DESKTOP-L982BSH with PID 25796 (C:\Users\ZL\IdeaProjects\demo\target\classes started by Administrator in C:\Users\ZL\IdeaProjects\demo)
-2020-07-07 14:29:15.352  INFO 25796 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
-2020-07-07 14:29:18.557  INFO 25796 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-07-07 14:29:18.575  INFO 25796 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-07-07 14:29:18.576  INFO 25796 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2020-07-07 14:29:19.197  INFO 25796 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2020-07-07 14:29:19.206  INFO 25796 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-07-07 14:29:19.207 DEBUG 25796 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
-2020-07-07 14:29:19.207  INFO 25796 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3662 ms
-2020-07-07 14:29:21.227  INFO 25796 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-07-07 14:29:21.259 DEBUG 25796 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2020-07-07 14:29:21.466 DEBUG 25796 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 23 mappings in 'requestMappingHandlerMapping'
-2020-07-07 14:29:21.502 DEBUG 25796 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2020-07-07 14:29:21.514 DEBUG 25796 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2020-07-07 14:29:21.866  INFO 25796 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-07-07 14:29:21.875  INFO 25796 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 8.061 seconds (JVM running for 10.413)
-2020-07-07 14:31:55.056  INFO 15968 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication on DESKTOP-L982BSH with PID 15968 (C:\Users\ZL\IdeaProjects\demo\target\classes started by Administrator in C:\Users\ZL\IdeaProjects\demo)
-2020-07-07 14:31:55.065  INFO 15968 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
-2020-07-07 14:31:57.747  INFO 15968 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8089 (http)
-2020-07-07 14:31:57.761  INFO 15968 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-07-07 14:31:57.762  INFO 15968 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2020-07-07 14:31:58.282  INFO 15968 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2020-07-07 14:31:58.290  INFO 15968 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-07-07 14:31:58.291 DEBUG 15968 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
-2020-07-07 14:31:58.292  INFO 15968 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3091 ms
-2020-07-07 14:32:00.140  INFO 15968 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-07-07 14:32:00.154 DEBUG 15968 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2020-07-07 14:32:00.299 DEBUG 15968 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 23 mappings in 'requestMappingHandlerMapping'
-2020-07-07 14:32:00.337 DEBUG 15968 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2020-07-07 14:32:00.353 DEBUG 15968 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2020-07-07 14:32:00.606  INFO 15968 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path ''
-2020-07-07 14:32:00.612  INFO 15968 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 6.733 seconds (JVM running for 8.706)
-2020-07-07 14:32:55.367  INFO 15968 --- [http-nio-8089-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-07-07 14:32:55.368  INFO 15968 --- [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-07-07 14:32:55.369 DEBUG 15968 --- [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
-2020-07-07 14:32:55.379 DEBUG 15968 --- [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2020-07-07 14:32:55.380  INFO 15968 --- [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
-2020-07-07 14:32:55.393 DEBUG 15968 --- [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/user/updateUserSex", parameters={}
-2020-07-07 14:32:55.401 DEBUG 15968 --- [http-nio-8089-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.demo.controller.UserController#updateUserSex(Map)
-2020-07-07 14:32:55.485 DEBUG 15968 --- [http-nio-8089-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [{userId=200403QPSbQS, userToken=20200403ILki1585915904136, sex=1}]
-2020-07-07 14:32:55.506  INFO 15968 --- [http-nio-8089-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-07-07 14:32:55.746  INFO 15968 --- [http-nio-8089-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-07-07 14:32:56.142 DEBUG 15968 --- [http-nio-8089-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-07-07 14:32:56.142 DEBUG 15968 --- [http-nio-8089-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [JsonResult{data=User{Id=null, uId='200403QPSbQS', uName='make', uPassWord='null', uPhone='null', uHe (truncated)...]
-2020-07-07 14:32:56.164 DEBUG 15968 --- [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2020-07-07 14:33:30.822 DEBUG 15968 --- [http-nio-8089-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/user/updateUserBirthday", parameters={}
-2020-07-07 14:33:30.823 DEBUG 15968 --- [http-nio-8089-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.demo.controller.UserController#updateUserBirthday(Map)
-2020-07-07 14:33:30.825 DEBUG 15968 --- [http-nio-8089-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [{userId=200403QPSbQS, userToken=20200403ILki1585915904136, birthday=2020-07-07}]
-2020-07-07 14:33:30.919 DEBUG 15968 --- [http-nio-8089-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-07-07 14:33:30.919 DEBUG 15968 --- [http-nio-8089-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [JsonResult{data=User{Id=null, uId='200403QPSbQS', uName='make', uPassWord='null', uPhone='null', uHe (truncated)...]
-2020-07-07 14:33:30.921 DEBUG 15968 --- [http-nio-8089-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2020-07-07 14:33:42.372 DEBUG 15968 --- [http-nio-8089-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/user/updateUserProvince", parameters={}
-2020-07-07 14:33:42.374 DEBUG 15968 --- [http-nio-8089-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.demo.controller.UserController#updateUserProvince(Map)
-2020-07-07 14:33:42.376 DEBUG 15968 --- [http-nio-8089-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [{userId=200403QPSbQS, userToken=20200403ILki1585915904136, province=北京市-市辖区-西城区}]
-2020-07-07 14:33:42.507 DEBUG 15968 --- [http-nio-8089-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-07-07 14:33:42.507 DEBUG 15968 --- [http-nio-8089-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [JsonResult{data=User{Id=null, uId='200403QPSbQS', uName='make', uPassWord='null', uPhone='null', uHe (truncated)...]
-2020-07-07 14:33:42.509 DEBUG 15968 --- [http-nio-8089-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2020-07-07 14:35:21.899 DEBUG 15968 --- [http-nio-8089-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/approve/approveInfo", parameters={}
-2020-07-07 14:35:21.900 DEBUG 15968 --- [http-nio-8089-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.demo.controller.UserApproveController#addApprove(Map)
-2020-07-07 14:35:21.903 DEBUG 15968 --- [http-nio-8089-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [{userId=200403QPSbQS, userToken=20200403ILki1585915904136, gscname=康科瑞, gsename=kangkerui, buslicens (truncated)...]
-2020-07-07 14:35:22.123 DEBUG 15968 --- [http-nio-8089-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-07-07 14:35:22.124 DEBUG 15968 --- [http-nio-8089-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [JsonResult{data=UserApprove{Id=null, uId='200403QPSbQS', uToken='20200403ILki1585915904136', gscName (truncated)...]
-2020-07-07 14:35:22.129 DEBUG 15968 --- [http-nio-8089-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-07-10 16:45:06.854  INFO 5580 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication on DESKTOP-L982BSH with PID 5580 (C:\Users\ZL\IdeaProjects\demo\target\classes started by Administrator in C:\Users\ZL\IdeaProjects\demo)
+2020-07-10 16:45:06.885  INFO 5580 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2020-07-10 16:45:09.804  INFO 5580 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8089 (http)
+2020-07-10 16:45:09.822  INFO 5580 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-10 16:45:09.823  INFO 5580 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-07-10 16:45:10.282  INFO 5580 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-07-10 16:45:10.288  INFO 5580 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-10 16:45:10.289 DEBUG 5580 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2020-07-10 16:45:10.289  INFO 5580 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3181 ms
+2020-07-10 16:45:12.068  INFO 5580 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-10 16:45:12.085 DEBUG 5580 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-07-10 16:45:12.246 DEBUG 5580 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 24 mappings in 'requestMappingHandlerMapping'
+2020-07-10 16:45:12.308 DEBUG 5580 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-07-10 16:45:12.331 DEBUG 5580 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-07-10 16:45:12.722  INFO 5580 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path ''
+2020-07-10 16:45:12.729  INFO 5580 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 7.71 seconds (JVM running for 10.029)

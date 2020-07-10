@@ -37,32 +37,32 @@
 
     <update id="updateUserNickname"
             parameterType="com.example.demo.model.User">
-        update app_user set u_name=#{uName} where u_id = #{uId}
+        update app_user set u_name=#{uName} where u_id = #{uId};
     </update>
 
     <update id="updateUserface"
             parameterType="com.example.demo.model.User">
-        update app_user set u_headimage=#{uHeadimage} where u_id = #{uId}
+        update app_user set u_headimage=#{uHeadimage} where u_id = #{uId};
     </update>
 
     <update id="updateUserBirthday"
             parameterType="com.example.demo.model.User">
-        update app_user set u_birthday=#{uBirthday} where u_id = #{uId}
+        update app_user set u_birthday=#{uBirthday} where u_id = #{uId};
     </update>
 
     <update id="updateUserProvince"
             parameterType="com.example.demo.model.User">
-        update app_user set u_province=#{uProvince} where u_id = #{uId}
+        update app_user set u_province=#{uProvince} where u_id = #{uId};
     </update>
 
     <update id="updateUserSex"
             parameterType="com.example.demo.model.User">
-        update app_user set u_sex=#{uSex} where u_id = #{uId}
+        update app_user set u_sex=#{uSex} where u_id = #{uId};
     </update>
 
     <update id="updateUserPhone"
             parameterType="com.example.demo.model.User">
-        update app_user set u_phone=#{uPhone} where u_id = #{uId}
+        update app_user set u_phone=#{uPhone} where u_id = #{uId};
     </update>
 
 

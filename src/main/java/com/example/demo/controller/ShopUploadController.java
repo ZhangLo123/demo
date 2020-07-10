@@ -3,19 +3,14 @@ package com.example.demo.controller;
 import com.example.demo.model.ShopUpload;
 import com.example.demo.service.ShopUploadService;
 import com.example.demo.utils.JsonResult;
-import com.google.gson.Gson;
-import net.minidev.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.sql.Date;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -29,7 +24,7 @@ public class ShopUploadController {
 
     @RequestMapping("/shopUpload/uploadOneshop")
     @ResponseBody
-    public JsonResult uploadOneshop(@RequestBody Map<String,Object> param){
+    public JsonResult<String> uploadOneshop(@RequestBody Map<String,Object> param){
 
         String userId = param.get("userId").toString();
         String shopName = param.get("shopname").toString();
@@ -52,9 +47,9 @@ public class ShopUploadController {
 
             ShopUpload shopUpload = new ShopUpload(userId,shopName,shopPrice,shopFactory,shopInfo,sf.format(new Date(System.currentTimeMillis())));
             shopUploadService.uploadShop(shopUpload);
-            return new JsonResult("","upload success",200);
+            return new JsonResult<>("","upload success",200);
         }else {
-            return new JsonResult("","upload failure",500);
+            return new JsonResult<>("","upload failure",500);
         }
 
     }
